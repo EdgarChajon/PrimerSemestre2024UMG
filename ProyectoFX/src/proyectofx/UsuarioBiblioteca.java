@@ -9,28 +9,30 @@ package proyectofx;
  * @author Edgar Chajón
  */
 public class UsuarioBiblioteca {
-    private String nombre;
+    private String nombreUsuario;
     private String direccion;
     private String telefono;
     private long DPI;
     private String correo;
-    private String idUsuario;
+    private int idUsuario;
+    private String estadoUsuario;
 
-    public UsuarioBiblioteca(String nombre, String direccion, String telefono, long DPI, String correo, String idUsuario) {
-        this.nombre = nombre;
+    public UsuarioBiblioteca(String nombreUsuario, String direccion, String telefono, long DPI, String correo, int idUsuario, String estadoUsuario) {
+        this.nombreUsuario = nombreUsuario;
         this.direccion = direccion;
         this.telefono = telefono;
         this.DPI = DPI;
         this.correo = correo;
         this.idUsuario = idUsuario;
+        this.estadoUsuario=estadoUsuario;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
     public String getDireccion() {
@@ -65,13 +67,24 @@ public class UsuarioBiblioteca {
         this.correo = correo;
     }
 
-    public String getIdUsuario() {
+    public int getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(String idUsuario) {
+    public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
+
+    public String getEstadoUsuario() {
+        return estadoUsuario;
+    }
+
+    public void setEstadoUsuario(String estadoUsuario) {
+        this.estadoUsuario = estadoUsuario;
+    }
+    
+    
+    
     
     public void PrestarLibro(){
         
