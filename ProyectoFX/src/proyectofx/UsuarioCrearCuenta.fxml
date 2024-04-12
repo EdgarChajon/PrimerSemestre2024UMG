@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.UsuarioCrearCuentaController">
+   <children>
+      <ImageView fitHeight="418.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../ImagenesProyecto/Inicio.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="47.0" layoutY="69.0" text="Ingrese los datos solicitados" textFill="#3e00ff" wrapText="true">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="285.0" text="Escriba una contraseña" textFill="#070707" wrapText="true">
+         <font>
+            <Font name="Arial Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="248.0" prefHeight="20.0" prefWidth="181.0" text="Correo Electronico " textFill="#111111" wrapText="true">
+         <font>
+            <Font name="Arial Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="50.0" layoutY="208.0" text="Numero de DPI" textFill="#111111" wrapText="true">
+         <font>
+            <Font name="Arial Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="169.0" text="Numero Telefonico" textFill="#111111" wrapText="true">
+         <font>
+            <Font name="Arial Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="139.0" text="Direccion de domicilio" textFill="#111111" wrapText="true">
+         <font>
+            <Font name="Arial Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="99.0" text="Nombre Completo" textFill="#111111" wrapText="true">
+         <font>
+            <Font name="Arial Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="144.0" layoutY="14.0" text="Crear nueva Cuenta ">
+         <font>
+            <Font name="Arial Bold" size="28.0" />
+         </font>
+      </Label>
+      <TextField layoutX="278.0" layoutY="98.0" prefHeight="25.0" prefWidth="220.0" />
+      <TextField layoutX="278.0" layoutY="138.0" prefHeight="25.0" prefWidth="255.0" />
+      <TextField layoutX="278.0" layoutY="168.0" prefHeight="25.0" prefWidth="171.0" />
+      <TextField layoutX="278.0" layoutY="207.0" prefHeight="25.0" prefWidth="171.0" />
+      <TextField layoutX="278.0" layoutY="247.0" prefHeight="25.0" prefWidth="255.0" />
+      <PasswordField layoutX="281.0" layoutY="284.0" prefHeight="25.0" prefWidth="220.0" />
+      <Button layoutX="169.0" layoutY="334.0" mnemonicParsing="false" text="Aceptar " />
+      <Button layoutX="312.0" layoutY="334.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Cancelar /Salir" />
+   </children>
+</AnchorPane>
