@@ -1,0 +1,61 @@
+create table prueba(
+id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100),
+    edad INT,
+    email VARCHAR(255) UNIQUE,
+    fecha_registro DATE
+
+)
+
+
+CREATE TABLE usuario(
+id serial PRIMARY KEY, 
+nombre varchar(250),
+direccion varchar(300),
+telefono varchar(30),
+DPI varchar(50)UNIQUE,
+
+); 
+
+CREATE TABLE Libro(
+id serial PRIMARY KEY
+ISBN varchar(100),
+titulo varchar(300),
+autor varchar(300),
+añoPublicacion varchar(200),
+editorial varchar(250),
+cantidadDisponible int
+
+);
+
+CREATE TABLE prestamo(
+id serial PRIMARY KEY,
+estado varchar(100),
+fechaPrestamo date
+
+);
+
+
+
+CREATE TABLE multa(
+id serial PRIMARY KEY,
+cantidad int
+);
+
+CREATE TABLE devolucion(
+id serial PRIMARY KEY,
+fechaEntrega date
+
+);
+
+CREATE TABLE Historial(
+idhistorial serial PRIMARY KEY,
+idusuario int REFERENCES usuario(id),
+idLibro int REFERENCES Libro(id),
+idPrestamo int REFERENCES prestamo(id),
+idDevolucion int REFERENCES devolucion(id),
+idMulta int REFERENCES multa(id),
+tipoTransaccion varchar (250),
+descripcion varchar(250),
+fechaTransaccion date
+);

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectoumgbiblioteca2024.CrearUsuarioController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../raw/imagen3.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="106.0" layoutY="14.0" text="Crear nueva Cuenta-Admin " textFill="#f5f5f5">
+         <font>
+            <Font name="Arial Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="9.0" layoutY="67.0" text="Ingrese los datos solicitados" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nombre" layoutX="175.0" layoutY="153.0" prefHeight="25.0" prefWidth="206.0" />
+      <TextField fx:id="direccion" layoutX="191.0" layoutY="210.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextField fx:id="telefono" layoutX="191.0" layoutY="264.0" />
+      <TextField fx:id="cui" layoutX="191.0" layoutY="329.0" />
+      <TextField fx:id="correo" layoutX="178.0" layoutY="481.0" prefHeight="25.0" prefWidth="200.0" />
+      <Button fx:id="AceptarCrearUsuario" layoutX="64.0" layoutY="566.0" mnemonicParsing="false" onAction="#AceptarCrearUsuario" text="Aceptar y crear cuenta " />
+      <Button fx:id="regresarMenuAdmin" layoutX="728.0" layoutY="566.0" mnemonicParsing="false" onAction="#regresarMenuAdmin" text="Regresar" />
+      <Label layoutX="30.0" layoutY="157.0" text="Nombre Completo" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="214.0" text="Direccion de domicilio" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="268.0" text="Numero Telefonico" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="334.0" text="Numero de DPI" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="485.0" prefHeight="16.0" prefWidth="135.0" text="Correo Electronico " textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="CancelarCrearUsuario" layoutX="438.0" layoutY="566.0" mnemonicParsing="false" onAction="#CancelarCrearUsuario" text="Cancelar" />
+      <TableView fx:id="tvUsuario" layoutX="406.0" layoutY="87.0" prefHeight="438.0" prefWidth="592.0">
+         <columns>
+            <TableColumn fx:id="COLNombre" prefWidth="165.0" text="Nombre" />
+            <TableColumn fx:id="COLID" minWidth="0.0" prefWidth="70.0" text="ID" />
+            <TableColumn fx:id="ColEstado" prefWidth="101.0" text="Estado" />
+            <TableColumn fx:id="COLRol" prefWidth="118.0" text="ROL" />
+            <TableColumn fx:id="Contraseña" prefWidth="137.0" text="Contraseña" />
+         </columns>
+      </TableView>
+      <Label layoutX="41.0" layoutY="391.0" text="Rol de Usuario" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="rolUsuario" layoutX="191.0" layoutY="387.0" />
+      <Label layoutX="191.0" layoutY="422.0" text="Admin" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="186.0" layoutY="444.0" prefHeight="0.0" prefWidth="99.0" text=" Usuario" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectoumgbiblioteca2024.MenuAdminController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../raw/imagen2.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="206.0" layoutY="14.0" prefHeight="27.0" prefWidth="203.0" text="Menu Principal" textAlignment="CENTER" textFill="#ff05f9">
+         <font>
+            <Font name="Arial Bold" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="42.0" layoutY="62.0" text="Administracion de Usuarios" textFill="#ebdb07">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="agregarUsuario" layoutX="45.0" layoutY="111.0" mnemonicParsing="false" onAction="#agregarUsuario" prefHeight="25.0" prefWidth="148.0" text="Crear cuenta usuario" />
+      <Button fx:id="editarUsuario" layoutX="45.0" layoutY="163.0" mnemonicParsing="false" onAction="#editarUsuario" text="Ver/Editar Usuario" />
+      <Button fx:id="eliminarUsuario" layoutX="45.0" layoutY="213.0" mnemonicParsing="false" onAction="#eliminarUsuario" text="Eliminar Usuario" />
+      <Label layoutX="451.0" layoutY="62.0" text="Administracion de Libros" textFill="#ebdb07">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="agregarLibro" layoutX="480.0" layoutY="112.0" mnemonicParsing="false" onAction="#agregarLibro" text="Crear Nuevo Libro" />
+      <Button fx:id="editarLibro" layoutX="480.0" layoutY="164.0" mnemonicParsing="false" onAction="#editarLibro" text="Ver/Editar Libro" />
+      <Button fx:id="eliminarLibro" layoutX="480.0" layoutY="214.0" mnemonicParsing="false" onAction="#eliminarLibro" text="Eliminar Libro" />
+      <Label layoutX="36.0" layoutY="309.0" text="Ver Historial  " textFill="#f2fcff">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="48.0" layoutY="361.0" mnemonicParsing="false" text="Usuarios Creados " />
+      <Button layoutX="54.0" layoutY="408.0" mnemonicParsing="false" text="Libros Creados" />
+      <Button fx:id="regresarMenuPrincipal" layoutX="706.0" layoutY="515.0" mnemonicParsing="false" onAction="#regresarMenuPrincipal" text="Salir" />
+   </children>
+</AnchorPane>

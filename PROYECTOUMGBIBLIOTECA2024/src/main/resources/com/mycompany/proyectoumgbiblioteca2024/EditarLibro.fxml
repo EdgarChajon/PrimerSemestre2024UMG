@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectoumgbiblioteca2024.EditarLibroController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../raw/imagen3.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="205.0" layoutY="22.0" prefHeight="32.0" prefWidth="299.0" text="Editar Datos de  Libros">
+         <font>
+            <Font name="Arial" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="54.0" text="Ingrese ISBN para la busqueda" textFill="RED">
+         <font>
+            <Font name="Arial Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="282.0" text="Año de publicacion " textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="231.0" text="Autor del Libro" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="187.0" text="Titulo de libro" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="154.0" text="Numero ISBN" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="351.0" text="Genero Literario" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="317.0" text="Editorial " textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ISBN" layoutX="164.0" layoutY="149.0" />
+      <TextField fx:id="tituloLibro" layoutX="164.0" layoutY="184.0" prefHeight="25.0" prefWidth="220.0" />
+      <TextField fx:id="autorLibro" layoutX="164.0" layoutY="227.0" prefHeight="25.0" prefWidth="220.0" />
+      <TextField fx:id="anoPublicacion" layoutX="170.0" layoutY="278.0" />
+      <TextField fx:id="editorial" layoutX="170.0" layoutY="312.0" prefHeight="25.0" prefWidth="220.0" />
+      <TextField fx:id="generoLiterario" layoutX="164.0" layoutY="346.0" prefHeight="25.0" prefWidth="158.0" />
+      <TextField fx:id="StockLibro" layoutX="164.0" layoutY="388.0" />
+      <Label layoutX="31.0" layoutY="392.0" text="Modificar Stock" textFill="#f5f5f5">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="aceptarModificacionLibro" layoutX="144.0" layoutY="565.0" mnemonicParsing="false" onAction="#aceptarModificacionLibro" text="Aceptar " />
+      <Button fx:id="cancelarModificacionLibro" layoutX="442.0" layoutY="562.0" mnemonicParsing="false" onAction="#cancelarModificacionLibro" prefHeight="32.0" prefWidth="62.0" text="Cancelar" />
+      <Button fx:id="regresarMenuAdmin" layoutX="717.0" layoutY="566.0" mnemonicParsing="false" onAction="#regresarMenuAdmin" text="Regresar" />
+      <TableView fx:id="tvbooks" layoutX="400.0" layoutY="83.0" prefHeight="438.0" prefWidth="592.0">
+         <columns>
+            <TableColumn fx:id="COLISBN" prefWidth="75.0" text="ISBN" />
+            <TableColumn fx:id="COLTItulo" prefWidth="75.0" text="Titulo" />
+            <TableColumn fx:id="COLAutor" prefWidth="75.0" text="Autor" />
+            <TableColumn fx:id="ColAno" prefWidth="75.0" text="Año" />
+            <TableColumn fx:id="COLEditorial" prefWidth="75.0" text="Editorial" />
+            <TableColumn fx:id="COLGenero" prefWidth="75.0" text="Genero" />
+            <TableColumn fx:id="COLStock" prefWidth="75.0" text="Stock" />
+            <TableColumn fx:id="registroLibro" prefWidth="75.0" text="Registro" />
+         </columns>
+      </TableView>
+      <Button fx:id="buscarLibro" layoutX="329.0" layoutY="149.0" mnemonicParsing="false" onAction="#buscarLibro" text="Buscar" />
+   </children>
+</AnchorPane>

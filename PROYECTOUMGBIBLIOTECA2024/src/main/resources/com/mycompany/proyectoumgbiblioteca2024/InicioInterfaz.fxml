@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectoumgbiblioteca2024.InicioInterfazController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../raw/imagen3.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="173.0" layoutY="14.0" prefHeight="42.0" prefWidth="378.0" text="Biblioteca Nacional" textFill="#f8fbff">
+         <font>
+            <Font name="Arial Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="114.0" prefHeight="28.0" prefWidth="252.0" text="Ingrese Nombre deUsuario" textFill="#fffeff">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nombreUsuario" layoutX="76.0" layoutY="150.0" prefHeight="36.0" prefWidth="226.0" />
+      <Label layoutX="80.0" layoutY="206.0" prefHeight="28.0" prefWidth="219.0" text="ingrese Contraseña" textFill="#fffeff">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="contraUsuario" layoutX="76.0" layoutY="248.0" prefHeight="36.0" prefWidth="219.0" />
+      <Button fx:id="ingresarCuenta" layoutX="76.0" layoutY="316.0" mnemonicParsing="false" onAction="#ingresarCuenta" text="Ingresar" />
+      <Button fx:id="restablecerContraUsuario" layoutX="156.0" layoutY="316.0" mnemonicParsing="false" onAction="#restablecerContraUsuario" text="Restablecer contraseña" />
+      <Button fx:id="crearUsuario" layoutX="75.0" layoutY="359.0" mnemonicParsing="false" onAction="#crearCuentaUsuario" prefHeight="25.0" prefWidth="162.0" text="Crear Usuario" />
+   </children>
+</AnchorPane>
