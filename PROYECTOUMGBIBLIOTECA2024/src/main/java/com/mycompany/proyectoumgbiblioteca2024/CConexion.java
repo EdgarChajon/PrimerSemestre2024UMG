@@ -37,6 +37,16 @@ Connection conectar= null;
         }
         return conectar;
     }
+    public void cerrar(Connection conexion) {
+        if (conexion != null) {
+            try {
+                conexion.close();
+                System.out.println("Conexión cerrada correctamente");
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar la conexión: " + e.toString());
+            }
+              }
+          }
     
 
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectoumgbiblioteca2024.RestablecerContraseñaController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../raw/Inicio.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="275.0" layoutY="43.0" prefHeight="76.0" prefWidth="486.0" text="Restablecer Contraseña " textFill="#030000">
+         <font>
+            <Font name="Arial Bold" size="41.0" />
+         </font>
+      </Label>
+      <Label layoutX="168.0" layoutY="132.0" prefHeight="27.0" prefWidth="252.0" text="Ingrese Correo Electronico" textFill="#bc0000">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="correo" layoutX="426.0" layoutY="159.0" prefHeight="25.0" prefWidth="259.0" />
+      <Button fx:id="busquedaCorreo" layoutX="500.0" layoutY="226.0" mnemonicParsing="false" onAction="#busquedaCorreo" text="Buscar Correo" />
+      <Label layoutX="151.0" layoutY="302.0" prefHeight="32.0" prefWidth="287.0" text="Ingrese Nueva Contraseña" textFill="#0c0011">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="AceptarCambioContra" layoutX="539.0" layoutY="395.0" mnemonicParsing="false" onAction="#AceptarCambioContra" text="Aceptar " />
+      <Button fx:id="regresarMenuInicio" layoutX="797.0" layoutY="469.0" mnemonicParsing="false" onAction="#regresarMenuInicio" text="Regresar " />
+      <PasswordField fx:id="nuevaContra" layoutX="426.0" layoutY="334.0" onAction="#nuevaContra" prefHeight="25.0" prefWidth="252.0" />
+   </children>
+</AnchorPane>

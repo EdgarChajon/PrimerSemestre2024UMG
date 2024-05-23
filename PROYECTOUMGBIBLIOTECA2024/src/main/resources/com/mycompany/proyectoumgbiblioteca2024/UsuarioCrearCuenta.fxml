@@ -10,9 +10,9 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectoumgbiblioteca2024.UsuarioCrearCuentaController">
    <children>
-      <ImageView fitHeight="600.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="700.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../raw/Inicio.jpg" />
+            <Image url="@../../../raw/imagen6.jpg" />
          </image>
       </ImageView>
       <Label layoutX="47.0" layoutY="69.0" text="Ingrese los datos solicitados" textFill="#3e00ff" wrapText="true">
@@ -20,48 +20,48 @@
             <Font name="Arial Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="48.0" layoutY="285.0" text="Escriba una contraseña" textFill="#070707" wrapText="true">
+      <Label layoutX="37.0" layoutY="384.0" text="Escriba una contraseña" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Arial Bold" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="48.0" layoutY="248.0" prefHeight="20.0" prefWidth="181.0" text="Correo Electronico " textFill="#111111" wrapText="true">
+      <Label layoutX="40.0" layoutY="451.0" prefHeight="27.0" prefWidth="195.0" text="Correo Electronico " textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Arial Black" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="323.0" text="Numero de DPI" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Arial Bold" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="50.0" layoutY="208.0" text="Numero de DPI" textFill="#111111" wrapText="true">
+      <Label layoutX="43.0" layoutY="261.0" text="Numero Telefonico" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Arial Bold" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="48.0" layoutY="169.0" text="Numero Telefonico" textFill="#111111" wrapText="true">
+      <Label layoutX="43.0" layoutY="209.0" text="Direccion de domicilio" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Arial Bold" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="47.0" layoutY="139.0" text="Direccion de domicilio" textFill="#111111" wrapText="true">
+      <Label layoutX="47.0" layoutY="140.0" text="Nombre Completo" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Arial Bold" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="47.0" layoutY="99.0" text="Nombre Completo" textFill="#111111" wrapText="true">
-         <font>
-            <Font name="Arial Bold" size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="144.0" layoutY="14.0" text="Crear nueva Cuenta ">
+      <Label layoutX="350.0" layoutY="20.0" text="Crear nueva Cuenta " textFill="WHITE">
          <font>
             <Font name="Arial Bold" size="28.0" />
          </font>
       </Label>
-      <TextField layoutX="278.0" layoutY="98.0" prefHeight="25.0" prefWidth="220.0" />
-      <TextField layoutX="278.0" layoutY="138.0" prefHeight="25.0" prefWidth="255.0" />
-      <TextField layoutX="278.0" layoutY="168.0" prefHeight="25.0" prefWidth="171.0" />
-      <TextField layoutX="278.0" layoutY="207.0" prefHeight="25.0" prefWidth="171.0" />
-      <TextField layoutX="278.0" layoutY="247.0" prefHeight="25.0" prefWidth="255.0" />
-      <PasswordField layoutX="281.0" layoutY="284.0" prefHeight="25.0" prefWidth="220.0" />
-      <Button layoutX="169.0" layoutY="334.0" mnemonicParsing="false" text="Aceptar " />
-      <Button layoutX="312.0" layoutY="334.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="Cancelar /Salir" />
+      <TextField fx:id="nombre" layoutX="267.0" layoutY="150.0" prefHeight="25.0" prefWidth="220.0" />
+      <TextField fx:id="direccion" layoutX="267.0" layoutY="208.0" prefHeight="25.0" prefWidth="255.0" />
+      <TextField fx:id="telefono" layoutX="267.0" layoutY="260.0" prefHeight="25.0" prefWidth="171.0" />
+      <TextField fx:id="cui" layoutX="267.0" layoutY="321.0" prefHeight="25.0" prefWidth="171.0" />
+      <Button fx:id="aceptarCrearUsuario" layoutX="178.0" layoutY="539.0" mnemonicParsing="false" onAction="#aceptarCrearUsuario" text="Aceptar " />
+      <Button fx:id="regresarMenuInicio" layoutX="430.0" layoutY="539.0" mnemonicParsing="false" onAction="#regresarMenuInicio" prefHeight="25.0" prefWidth="113.0" text="Cancelar /Salir" />
+      <PasswordField fx:id="ContraUsuario" layoutX="267.0" layoutY="383.0" />
+      <TextField fx:id="correo" layoutX="265.0" layoutY="451.0" prefHeight="25.0" prefWidth="220.0" />
    </children>
 </AnchorPane>

@@ -34,6 +34,6 @@
       <PasswordField fx:id="contraUsuario" layoutX="76.0" layoutY="248.0" prefHeight="36.0" prefWidth="219.0" />
       <Button fx:id="ingresarCuenta" layoutX="76.0" layoutY="316.0" mnemonicParsing="false" onAction="#ingresarCuenta" text="Ingresar" />
       <Button fx:id="restablecerContraUsuario" layoutX="156.0" layoutY="316.0" mnemonicParsing="false" onAction="#restablecerContraUsuario" text="Restablecer contraseña" />
-      <Button fx:id="crearUsuario" layoutX="75.0" layoutY="359.0" mnemonicParsing="false" onAction="#crearCuentaUsuario" prefHeight="25.0" prefWidth="162.0" text="Crear Usuario" />
+      <Button fx:id="crearCuentaUsuario" layoutX="75.0" layoutY="359.0" mnemonicParsing="false" onAction="#crearCuentaUsuario" prefHeight="25.0" prefWidth="162.0" text="Crear Usuario" />
    </children>
 </AnchorPane>

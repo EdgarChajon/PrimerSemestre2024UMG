@@ -33,12 +33,12 @@ public class InicioInterfazController implements Initializable {
     private PasswordField contraUsuario;
     @FXML
     private Button ingresarCuenta;
-    @FXML
-    private Button crearUsuario;
     
     private Connection conectar;
     @FXML
     private Button restablecerContraUsuario;
+    @FXML
+    private Button crearCuentaUsuario;
 
    @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -125,11 +125,48 @@ public class InicioInterfazController implements Initializable {
 
     @FXML
     private void restablecerContraUsuario(ActionEvent event) {
+        
+        try{
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/RestablecerContraseña.fxml"));
+          Parent root=loader.load();
+          
+          Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+      Stage currentStage = (Stage) restablecerContraUsuario.getScene().getWindow();
+      currentStage.close();
+      }catch (IOException ex) {
+        ex.printStackTrace();
+        System.out.println("Error al cargar la ventana RegistrarLibro");
+      
+         }
+        
         // Implementar lógica de restablecimiento de contraseña aquí
     }
 
     @FXML
     private void crearCuentaUsuario(ActionEvent event) {
         // Implementar lógica de creación de usuario aquí
-    }
+         try{
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/UsuarioCrearCuenta.fxml"));
+          Parent root=loader.load();
+          
+          Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+      Stage currentStage = (Stage) crearCuentaUsuario.getScene().getWindow();
+      currentStage.close();
+      }catch (IOException ex) {
+        ex.printStackTrace();
+        System.out.println("Error al cargar la ventana RegistrarLibro");
+      
+         }
+        
+        
+     }
+
+    
+        
+        
+    
 }

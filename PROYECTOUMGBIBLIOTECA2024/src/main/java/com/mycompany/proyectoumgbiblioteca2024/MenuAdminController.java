@@ -85,7 +85,7 @@ public class MenuAdminController implements Initializable {
           Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();
-      Stage currentStage = (Stage) agregarLibro.getScene().getWindow();
+      Stage currentStage = (Stage) agregarUsuario.getScene().getWindow();
       currentStage.close();
       }catch (IOException ex) {
         ex.printStackTrace();
@@ -103,7 +103,7 @@ public class MenuAdminController implements Initializable {
           Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();
-      Stage currentStage = (Stage) agregarLibro.getScene().getWindow();
+      Stage currentStage = (Stage) editarUsuario.getScene().getWindow();
       currentStage.close();
       }catch (IOException ex) {
         ex.printStackTrace();
@@ -121,7 +121,7 @@ public class MenuAdminController implements Initializable {
           Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();
-      Stage currentStage = (Stage) agregarLibro.getScene().getWindow();
+      Stage currentStage = (Stage) eliminarUsuario.getScene().getWindow();
       currentStage.close();
       }catch (IOException ex) {
         ex.printStackTrace();
@@ -141,7 +141,7 @@ public class MenuAdminController implements Initializable {
           Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();
-      Stage currentStage = (Stage) agregarLibro.getScene().getWindow();
+      Stage currentStage = (Stage) editarLibro.getScene().getWindow();
       currentStage.close();
       }catch (IOException ex) {
         ex.printStackTrace();
@@ -159,7 +159,7 @@ public class MenuAdminController implements Initializable {
           Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();
-      Stage currentStage = (Stage) agregarLibro.getScene().getWindow();
+      Stage currentStage = (Stage) eliminarLibro.getScene().getWindow();
       currentStage.close();
       }catch (IOException ex) {
         ex.printStackTrace();
