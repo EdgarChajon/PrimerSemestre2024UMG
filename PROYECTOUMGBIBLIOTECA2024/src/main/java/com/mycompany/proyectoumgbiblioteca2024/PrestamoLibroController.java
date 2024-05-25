@@ -13,7 +13,7 @@ import javafx.fxml.Initializable;
  *
  * @author Edgar Chajón
  */
-public class PruebaActualizacionController implements Initializable {
+public class PrestamoLibroController implements Initializable {
 
     /**
      * Initializes the controller class.
