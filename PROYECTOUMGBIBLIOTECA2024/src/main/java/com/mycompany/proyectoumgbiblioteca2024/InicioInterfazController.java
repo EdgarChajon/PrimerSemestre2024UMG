@@ -59,7 +59,15 @@ public class InicioInterfazController implements Initializable {
             ResultSet rs = pstmt.executeQuery();
 
             if (rs.next()) {
+                SesionUsuario sesion = SesionUsuario.getInstancia();
+                sesion.setNombreUsuario(rs.getString("nombre"));
+                sesion.setRolUsuario(rs.getString("RolUsuario"));
+                sesion.setId(rs.getInt("id"));
+
                 String rolUsuario = rs.getString("RolUsuario");
+                
+                
+              
                 if (rolUsuario.equals("Admin")) {
                     cargarMenuAdmin();
                 } else if (rolUsuario.equals("Usuario")) {
@@ -141,12 +149,12 @@ public class InicioInterfazController implements Initializable {
       
          }
         
-        // Implementar lógica de restablecimiento de contraseña aquí
+        
     }
 
     @FXML
     private void crearCuentaUsuario(ActionEvent event) {
-        // Implementar lógica de creación de usuario aquí
+       
          try{
           FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/UsuarioCrearCuenta.fxml"));
           Parent root=loader.load();

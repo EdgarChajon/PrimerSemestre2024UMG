@@ -44,6 +44,20 @@ public class MenuUsuarioController implements Initializable {
 
     @FXML
     private void realizarPrestamoLibro(ActionEvent event) {
+        try{
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/PrestamoLibro.fxml"));
+          Parent root=loader.load();
+          
+          Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+      Stage currentStage = (Stage)  realizarPrestamoLibro.getScene().getWindow();
+      currentStage.close();
+      }catch (IOException ex) {
+        ex.printStackTrace();
+        System.out.println("Error al cargar la ventana Realizar Prestamo");
+      
+         }
     }
 
     @FXML
