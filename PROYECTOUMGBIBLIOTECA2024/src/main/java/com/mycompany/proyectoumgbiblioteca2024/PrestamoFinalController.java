@@ -4,6 +4,7 @@
  */
 package com.mycompany.proyectoumgbiblioteca2024;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -12,12 +13,16 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -52,6 +57,8 @@ public class PrestamoFinalController implements Initializable {
     private Button AceptarTerminar;
     
      private List<Libro> librosPrestamo;
+    @FXML
+    private TextField IdUsuario;
 
     /**
      * Initializes the controller class.
@@ -68,7 +75,7 @@ public class PrestamoFinalController implements Initializable {
         ColAno.setCellValueFactory(new PropertyValueFactory<>("anoPublicacion"));
         COLGenero.setCellValueFactory(new PropertyValueFactory<>("generoliterario"));
         CantidadAPrestamo.setCellValueFactory(new PropertyValueFactory<>("cantidadStock"));
-         }
+    }
     
     public void setDatosPrestamo(List<Libro> libros, int prestamoId, String nombreUsuario) {
         this.librosPrestamo = libros;
@@ -90,6 +97,25 @@ public class PrestamoFinalController implements Initializable {
     }
     @FXML
     private void AceptarTerminar(ActionEvent event) {
+        try{
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/MenuUsuario.fxml"));
+          Parent root=loader.load();
+          
+          Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+      Stage currentStage = (Stage)  AceptarTerminar.getScene().getWindow();
+      currentStage.close();
+      }catch (IOException ex) {
+        ex.printStackTrace();
+        System.out.println("Error al cargar la ventana Realizar Prestamo");
+      
+         }
+        
+     
+        
+        Stage stage = (Stage) AceptarTerminar.getScene().getWindow();
+        stage.close();
     }
 
     
