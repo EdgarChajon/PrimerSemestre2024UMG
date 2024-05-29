@@ -40,6 +40,6 @@
             <Font name="Arial Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="IDUsuario" layoutX="65.0" layoutY="124.0" prefHeight="36.0" prefWidth="139.0" />
+      <TextField fx:id="IdUsuario" layoutX="65.0" layoutY="137.0" prefHeight="36.0" prefWidth="139.0" />
    </children>
 </AnchorPane>

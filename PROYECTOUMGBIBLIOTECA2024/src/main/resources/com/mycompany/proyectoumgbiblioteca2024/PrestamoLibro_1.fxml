@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectoumgbiblioteca2024.PrestamoLibro_1Controller">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../raw/imagen2.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tvbooks" layoutX="376.0" layoutY="82.0" prefHeight="438.0" prefWidth="592.0">
+         <columns>
+            <TableColumn fx:id="COLISBN" prefWidth="95.0" text="ISBN" />
+            <TableColumn fx:id="COLTItulo" prefWidth="128.0" text="Titulo" />
+            <TableColumn fx:id="COLAutor" prefWidth="131.0" text="Autor" />
+            <TableColumn fx:id="ColAno" prefWidth="68.0" text="Año" />
+            <TableColumn fx:id="COLGenero" prefWidth="110.0" text="Genero" />
+            <TableColumn fx:id="COLStock" prefWidth="59.0" text="Stock" />
+         </columns>
+      </TableView>
+      <TextField fx:id="IdUsuario" layoutX="154.0" layoutY="27.0" />
+      <Label layoutX="14.0" layoutY="31.0" text="Id Usuario" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="74.0" text="Nombre de Usuario" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nombre" layoutX="154.0" layoutY="70.0" />
+      <Label layoutX="14.0" layoutY="112.0" text="Numero de ISBN" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="265.0" text="Autor de libro" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="188.0" text="Titulo de Libro" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="317.0" text="Año publicacion " textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="477.0" text="Cantidad a Prestamo" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="393.0" text="Genero Literario" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="354.0" text="Editorial de libro" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ISBN" layoutX="154.0" layoutY="108.0" />
+      <Button fx:id="buscarLibroporISBN" layoutX="177.0" layoutY="143.0" mnemonicParsing="false" onAction="#buscarLibroporISBN" text="Buscar por ISBN" />
+      <TextField fx:id="tituloLibro" layoutX="153.0" layoutY="184.0" />
+      <Button fx:id="buscarLibroporTitulo" layoutX="177.0" layoutY="230.0" mnemonicParsing="false" onAction="#buscarLibroporTitulo" text="Buscar por Titulo" />
+      <TextField fx:id="autorLibro" layoutX="153.0" layoutY="269.0" />
+      <TextField fx:id="anoPublicacion" layoutX="153.0" layoutY="313.0" />
+      <TextField fx:id="editorial" layoutX="154.0" layoutY="350.0" />
+      <TextField fx:id="generoLiterario" layoutX="153.0" layoutY="389.0" />
+      <Label layoutX="16.0" layoutY="437.0" text="Cantidad en stock " textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="cantidadenStock" layoutX="153.0" layoutY="433.0" />
+      <TextField fx:id="cantidadparaPrestamo" layoutX="163.0" layoutY="473.0" prefHeight="25.0" prefWidth="85.0" />
+      <Button fx:id="anadiraCarrito" layoutX="156.0" layoutY="508.0" mnemonicParsing="false" onAction="#anadiraCarrito" text="Añadir a Carrito" />
+      <Button fx:id="aceptarPrestamo" layoutX="176.0" layoutY="546.0" mnemonicParsing="false" onAction="#aceptarPrestamo" text="Aceptar" />
+      <Button fx:id="ordenarTablaporTitulo" layoutX="465.0" layoutY="534.0" mnemonicParsing="false" onAction="#ordenarTablaporTitulo" text="Ordenar Tabla por Titutlo" />
+      <Button fx:id="ordenarTablaporGenero" layoutX="754.0" layoutY="534.0" mnemonicParsing="false" onAction="#ordenarTablaporGenero" text="Ordenar Tabla por Genero" />
+      <Button fx:id="CancelarPrestamo" layoutX="500.0" layoutY="583.0" mnemonicParsing="false" onAction="#CancelarPrestamo" text="Cancelar " />
+      <Button fx:id="salirDeMenu" layoutX="789.0" layoutY="577.0" mnemonicParsing="false" onAction="#salirDeMenu" text="Salir de Menu" />
+      <Button fx:id="VerLibrosprestados" layoutX="324.0" layoutY="583.0" mnemonicParsing="false" onAction="#VerLibrosprestados" text="Ver Libros Prestados" />
+   </children>
+</AnchorPane>

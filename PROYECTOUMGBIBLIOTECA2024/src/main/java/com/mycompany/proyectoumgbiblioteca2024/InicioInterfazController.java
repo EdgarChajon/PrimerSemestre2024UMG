@@ -39,6 +39,8 @@ public class InicioInterfazController implements Initializable {
     private Button restablecerContraUsuario;
     @FXML
     private Button crearCuentaUsuario;
+    @FXML
+    private TextField IdUsuario;
 
    @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -48,26 +50,24 @@ public class InicioInterfazController implements Initializable {
 
     @FXML
     protected void ingresarCuenta(ActionEvent event) {
+        String id= IdUsuario.getText();
         String nombre = nombreUsuario.getText();
         String contra = contraUsuario.getText();
+       
 
         try {
-            String sql = "SELECT * FROM UsuarioBiblioteca WHERE nombre = ? AND Contra = ?";
+            String sql = "SELECT * FROM UsuarioBiblioteca WHERE CAST(id AS VARCHAR) = ? AND nombre = ? AND contra=?";
             PreparedStatement pstmt = conectar.prepareStatement(sql);
-            pstmt.setString(1, nombre);
-            pstmt.setString(2, contra);
+            pstmt.setString(1, id);
+            pstmt.setString(2, nombre);
+            pstmt.setString(3, contra);
             ResultSet rs = pstmt.executeQuery();
 
             if (rs.next()) {
-                SesionUsuario sesion = SesionUsuario.getInstancia();
-                sesion.setNombreUsuario(rs.getString("nombre"));
-                sesion.setRolUsuario(rs.getString("RolUsuario"));
-                sesion.setId(rs.getInt("id"));
-
+                
                 String rolUsuario = rs.getString("RolUsuario");
+                guardarSesion(id, nombre, rolUsuario);  //se agrega para que se puedan quedar guardados los datos
                 
-                
-              
                 if (rolUsuario.equals("Admin")) {
                     cargarMenuAdmin();
                 } else if (rolUsuario.equals("Usuario")) {
@@ -85,6 +85,13 @@ public class InicioInterfazController implements Initializable {
             ex.printStackTrace();
             mostrarMensaje("Error al intentar iniciar sesión");
         }
+    }
+    
+    private void guardarSesion(String id, String nombre, String rolUsuario) {
+        SesionUsuario sesion = SesionUsuario.getInstancia();
+        sesion.setId(Integer.parseInt(id));
+        sesion.setNombreUsuario(nombre);
+        sesion.setRolUsuario(rolUsuario);
     }
 
     private void cargarMenuAdmin() {
@@ -107,7 +114,7 @@ public class InicioInterfazController implements Initializable {
     
     private void cargarMenuUsuario() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/MenuUsuario.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/MenuUsuario_1.fxml"));
             Parent root = loader.load();
             
             Stage stage = new Stage();
@@ -149,12 +156,12 @@ public class InicioInterfazController implements Initializable {
       
          }
         
-        
+        // Implementar lógica de restablecimiento de contraseña aquí
     }
 
     @FXML
     private void crearCuentaUsuario(ActionEvent event) {
-       
+        // Implementar lógica de creación de usuario aquí
          try{
           FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/UsuarioCrearCuenta.fxml"));
           Parent root=loader.load();

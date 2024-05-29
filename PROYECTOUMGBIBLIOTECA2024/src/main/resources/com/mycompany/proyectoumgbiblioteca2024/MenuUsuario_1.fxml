@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectoumgbiblioteca2024.MenuUsuario_1Controller">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../raw/biblioteca.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="32.0" prefWidth="174.0" text="ID de Usuario" textFill="#19d10a">
+         <font>
+            <Font name="Arial Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="IdUsuario" layoutX="188.0" layoutY="14.0" prefHeight="25.0" prefWidth="124.0" />
+      <Label layoutX="14.0" layoutY="57.0" prefHeight="32.0" prefWidth="174.0" text="Nombre de usuario" textFill="#19d10a">
+         <font>
+            <Font name="Arial Bold" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nombre" layoutX="188.0" layoutY="61.0" prefHeight="25.0" prefWidth="183.0" />
+      <Button fx:id="RealizarPrestamoLibro" layoutX="193.0" layoutY="164.0" mnemonicParsing="false" onAction="#RealizarPrestamoLibro" prefHeight="25.0" prefWidth="174.0" text="Realizar prestamo de Libro" />
+      <Button fx:id="verHistorialdePrestamos" layoutX="193.0" layoutY="259.0" mnemonicParsing="false" onAction="#verHistorialdePrestamos" prefHeight="25.0" prefWidth="168.0" text="Ver Historial" />
+      <Button fx:id="VerHistorialMultas" layoutX="193.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="168.0" text="Ver Multas" />
+      <Button fx:id="RestablecerContraseña" layoutX="529.0" layoutY="164.0" mnemonicParsing="false" onAction="#RestablecerContraseña" prefHeight="25.0" prefWidth="174.0" text="Restablecer contraseña" />
+      <Button fx:id="DevolucionLibros" layoutX="188.0" layoutY="434.0" mnemonicParsing="false" onAction="#DevolucionLibros" prefHeight="25.0" prefWidth="168.0" text="Devolucion de libros " />
+      <Button fx:id="SalirDeSistema" layoutX="532.0" layoutY="434.0" mnemonicParsing="false" onAction="#SalirDeSistema" prefHeight="25.0" prefWidth="168.0" text="Salir de sistema" />
+   </children>
+</AnchorPane>

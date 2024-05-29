@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.mycompany.proyectoumgbiblioteca2024.PrestamoFinal_1Controller">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../raw/imagen6.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="67.0" layoutY="54.0" prefHeight="16.0" prefWidth="110.0" text="ID de Prestamo" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="IdPrestamo" layoutX="193.0" layoutY="50.0" />
+      <Label layoutX="67.0" layoutY="118.0" prefHeight="16.0" prefWidth="110.0" text="ID de Usuario" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="IdUsuario" layoutX="200.0" layoutY="113.0" />
+      <Label layoutX="34.0" layoutY="184.0" prefHeight="16.0" prefWidth="143.0" text="Nombre de Usuario" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nombre" layoutX="193.0" layoutY="180.0" />
+      <TextField fx:id="FechaPrestamo" layoutX="200.0" layoutY="245.0" />
+      <TextField fx:id="fechaMaximaDevolucion" layoutX="200.0" layoutY="323.0" />
+      <Label layoutX="34.0" layoutY="250.0" prefHeight="16.0" prefWidth="143.0" text="Fecha de prestamo" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="317.0" prefHeight="37.0" prefWidth="143.0" text="Fecha devolucion" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tvbooksPrestados" layoutX="363.0" layoutY="51.0" prefHeight="438.0" prefWidth="631.0">
+         <columns>
+            <TableColumn fx:id="COLISBN" prefWidth="75.0" text="ISBN" />
+            <TableColumn fx:id="COLTItulo" prefWidth="147.0" text="Titulo" />
+            <TableColumn fx:id="COLAutor" prefWidth="147.0" text="Autor" />
+            <TableColumn fx:id="ColAno" prefWidth="72.0" text="Año" />
+            <TableColumn fx:id="COLGenero" prefWidth="113.0" text="Genero" />
+            <TableColumn fx:id="UnidadesPrestadas" prefWidth="76.0" text="U. Prestadas" />
+         </columns>
+      </TableView>
+      <Button fx:id="aceptarPrestamo" layoutX="488.0" layoutY="522.0" mnemonicParsing="false" onAction="#aceptarPrestamo" text="Aceptar " />
+   </children>
+</AnchorPane>
