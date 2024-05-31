@@ -110,7 +110,7 @@ public class UsuarioCrearCuentaController implements Initializable {
         
         if (resultSet.next()) {
             int idGenerado = resultSet.getInt("id");
-            mostrarAlerta("Éxito", "Usuario registrado correctamente. ID del usuario: " + idGenerado);
+            mostrarAlerta("Éxito", "Usuario registrado correctamente. ID del usuario: " + idGenerado +"Por favor anotar numero para ingresar al sistema");
         } else {
             mostrarAlerta("Éxito", "Usuario registrado correctamente, pero no se pudo obtener el ID.");
         }
