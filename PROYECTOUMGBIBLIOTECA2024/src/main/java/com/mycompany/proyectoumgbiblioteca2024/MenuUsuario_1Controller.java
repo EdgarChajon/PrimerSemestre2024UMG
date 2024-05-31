@@ -82,18 +82,65 @@ public class MenuUsuario_1Controller implements Initializable {
 
     @FXML
     private void verHistorialdePrestamos(ActionEvent event) {
+        try{
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/HitorialPrestamo.fxml"));
+          Parent root=loader.load();
+          
+          Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+      Stage currentStage = (Stage) verHistorialdePrestamos.getScene().getWindow();
+      currentStage.close();
+      }catch (IOException ex) {
+        ex.printStackTrace();
+        System.out.println("Error al cargar la ventana RegistrarLibro");
+      
+         }
     }
 
     @FXML
     private void RestablecerContraseña(ActionEvent event) {
+        try{
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/RestablecerContraseña.fxml"));
+          Parent root=loader.load();
+          
+          Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+      Stage currentStage = (Stage) RestablecerContraseña.getScene().getWindow();
+      currentStage.close();
+      }catch (IOException ex) {
+        ex.printStackTrace();
+        System.out.println("Error al cargar la ventana RegistrarLibro");
+      
+         }
     }
 
     @FXML
     private void DevolucionLibros(ActionEvent event) {
     }
+    
+    
+    
+    
+    
 
     @FXML
     private void SalirDeSistema(ActionEvent event) {
+        try{
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/InicioInterfaz.fxml"));
+          Parent root=loader.load();
+          
+          Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+      Stage currentStage = (Stage) SalirDeSistema.getScene().getWindow();
+      currentStage.close();
+      }catch (IOException ex) {
+        ex.printStackTrace();
+        System.out.println("Error al cargar la ventana RegistrarLibro");
+      
+         }
     }
     
 }

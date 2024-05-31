@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectoumgbiblioteca2024.LibrosPrestados_2Controller">
+   <children>
+      <ImageView fitHeight="670.0" fitWidth="1007.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../raw/imagen6.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="407.0" layoutY="371.0" prefHeight="37.0" prefWidth="143.0" text="Fecha devolucion" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="407.0" layoutY="305.0" prefHeight="16.0" prefWidth="143.0" text="Fecha de prestamo" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fechaMaximaDevolucion" layoutX="582.0" layoutY="377.0" />
+      <TextField fx:id="FechaPrestamo" layoutX="570.0" layoutY="300.0" />
+      <TextField fx:id="nombre" layoutX="570.0" layoutY="234.0" />
+      <Label layoutX="407.0" layoutY="239.0" prefHeight="16.0" prefWidth="143.0" text="Nombre de Usuario" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="IdUsuario" layoutX="570.0" layoutY="168.0" />
+      <Label layoutX="407.0" layoutY="172.0" prefHeight="16.0" prefWidth="110.0" text="ID de Usuario" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="IdPrestamo" layoutX="570.0" layoutY="104.0" />
+      <Label layoutX="407.0" layoutY="108.0" prefHeight="16.0" prefWidth="110.0" text="ID de Prestamo" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="RegresarMenuUsuario" layoutX="569.0" layoutY="566.0" mnemonicParsing="false" onAction="#RegresarMenuUsuario" text="Salir" />
+   </children>
+</AnchorPane>

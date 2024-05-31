@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.mycompany.proyectoumgbiblioteca2024.HitorialPrestamoController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" layoutX="-2.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../raw/imagen6.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="IdUsuario" layoutX="198.0" layoutY="82.0" prefHeight="25.0" prefWidth="124.0" />
+      <Label layoutX="24.0" layoutY="24.0" prefHeight="32.0" prefWidth="227.0" text="Ingrese su ID de usuario" textFill="#19d10a">
+         <font>
+            <Font name="Arial Bold" size="17.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tablaPrestamos" layoutX="37.0" layoutY="153.0" prefHeight="431.0" prefWidth="924.0">
+        <columns>
+          <TableColumn fx:id="IdPrestamo" prefWidth="75.0" text="ID Prestamo" />
+          <TableColumn fx:id="ISBNLibro" prefWidth="173.0" text="ISBN de Libro" />
+            <TableColumn fx:id="CantidadPrestada" prefWidth="116.0" text="Cantidad" />
+            <TableColumn fx:id="FechaPrestamo" prefWidth="144.0" text="Fecha Prestamo" />
+            <TableColumn fx:id="FechaDevolucion" prefWidth="157.0" text="Fecha Devolucion" />
+            <TableColumn fx:id="FechaVencimiento" prefWidth="140.0" text="Fecha Vencimiento" />
+            <TableColumn fx:id="EstadodePrestamo" prefWidth="116.0" text="Estado" />
+        </columns>
+      </TableView>
+      <Button fx:id="RegresarMenuUsuario" layoutX="462.0" layoutY="599.0" mnemonicParsing="false" onAction="#RegresarMenuUsuario" text="Regresar " />
+      <Button fx:id="BuscarHistorialdePrestamo" layoutX="202.0" layoutY="116.0" mnemonicParsing="false" onAction="#BuscarHistorialdePrestamo" text="Buscar Historial" />
+   </children>
+</AnchorPane>
