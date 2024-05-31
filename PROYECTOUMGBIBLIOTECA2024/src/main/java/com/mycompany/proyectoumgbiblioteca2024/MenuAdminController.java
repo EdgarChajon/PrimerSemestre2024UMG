@@ -37,7 +37,15 @@ public class MenuAdminController implements Initializable {
     
     private Stage stage;
     @FXML
-    private Button regresarMenuPrincipal;
+    private Button UsuariosCreados;
+    @FXML
+    private Button LibrosCreados;
+    @FXML
+    private Button SalirdeSistema;
+    @FXML
+    private Button AceptarDevolucionLibro;
+    @FXML
+    private Button LibrosPrestados;
 
 
     
@@ -173,8 +181,100 @@ public class MenuAdminController implements Initializable {
     }
 
     @FXML
-    private void regresarMenuPrincipal(ActionEvent event) {
+    private void UsuariosCreados(ActionEvent event) {
+        try{
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/UsuariosCreados.fxml"));
+          Parent root=loader.load();
+          
+          Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+      Stage currentStage = (Stage) UsuariosCreados.getScene().getWindow();
+      currentStage.close();
+      }catch (IOException ex) {
+        ex.printStackTrace();
+        System.out.println("Error al cargar la ventana RegistrarLibro");
+    } 
+        
+        
+        
     }
+
+    @FXML
+    private void LibrosCreados(ActionEvent event) {
+       try{
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/LibrosRegistrados.fxml"));
+          Parent root=loader.load();
+          
+          Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+      Stage currentStage = (Stage) LibrosCreados.getScene().getWindow();
+      currentStage.close();
+      }catch (IOException ex) {
+        ex.printStackTrace();
+        System.out.println("Error al cargar la ventana RegistrarLibro");
+    }   
+        
+        
+        
+        
+    }
+
+    @FXML
+    private void SalirdeSistema(ActionEvent event) {
+       try{
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/InicioInterfaz.fxml"));
+          Parent root=loader.load();
+          
+          Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+      Stage currentStage = (Stage) SalirdeSistema.getScene().getWindow();
+      currentStage.close();
+      }catch (IOException ex) {
+        ex.printStackTrace();
+        System.out.println("Error al cargar la ventana RegistrarLibro");
+    } 
+        
+        
+    }
+
+    @FXML
+    private void AceptarDevolucionLibro(ActionEvent event) {
+        try{
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/AceptarDevolucionLibro.fxml"));
+          Parent root=loader.load();
+          
+          Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+      Stage currentStage = (Stage) AceptarDevolucionLibro.getScene().getWindow();
+      currentStage.close();
+      }catch (IOException ex) {
+        ex.printStackTrace();
+        System.out.println("Error al cargar la ventana RegistrarLibro");
+    }
+        }
+
+    @FXML
+    private void LibrosPrestados(ActionEvent event) {
+       try{
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/HistorialAdmin.fxml"));
+          Parent root=loader.load();
+          
+          Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+      Stage currentStage = (Stage) LibrosPrestados.getScene().getWindow();
+      currentStage.close();
+      }catch (IOException ex) {
+        ex.printStackTrace();
+        System.out.println("Error al cargar la ventana RegistrarLibro");
+    }
+        }  
+        
+    
        
       
         

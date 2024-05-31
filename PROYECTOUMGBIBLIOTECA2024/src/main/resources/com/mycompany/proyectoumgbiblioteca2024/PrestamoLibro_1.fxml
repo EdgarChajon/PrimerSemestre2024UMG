@@ -88,11 +88,12 @@
       <TextField fx:id="cantidadenStock" layoutX="153.0" layoutY="433.0" />
       <TextField fx:id="cantidadparaPrestamo" layoutX="163.0" layoutY="473.0" prefHeight="25.0" prefWidth="85.0" />
       <Button fx:id="anadiraCarrito" layoutX="156.0" layoutY="508.0" mnemonicParsing="false" onAction="#anadiraCarrito" text="Añadir a Carrito" />
-      <Button fx:id="aceptarPrestamo" layoutX="176.0" layoutY="546.0" mnemonicParsing="false" onAction="#aceptarPrestamo" text="Aceptar/Cerrar Carrito" />
+      <Button fx:id="aceptarPrestamo" layoutX="139.0" layoutY="547.0" mnemonicParsing="false" onAction="#aceptarPrestamo" text="Aceptar/Cerrar Carrito" />
       <Button fx:id="ordenarTablaporTitulo" layoutX="465.0" layoutY="534.0" mnemonicParsing="false" onAction="#ordenarTablaporTitulo" text="Ordenar Tabla por Titutlo" />
       <Button fx:id="ordenarTablaporGenero" layoutX="754.0" layoutY="534.0" mnemonicParsing="false" onAction="#ordenarTablaporGenero" text="Ordenar Tabla por Genero" />
-      <Button fx:id="CancelarPrestamo" layoutX="500.0" layoutY="583.0" mnemonicParsing="false" onAction="#CancelarPrestamo" text="Cancelar " />
+      <Button fx:id="CancelarPrestamo" layoutX="559.0" layoutY="583.0" mnemonicParsing="false" onAction="#CancelarPrestamo" text="Cancelar " />
       <Button fx:id="salirDeMenu" layoutX="789.0" layoutY="577.0" mnemonicParsing="false" onAction="#salirDeMenu" text="Salir de Menu" />
-      <Button fx:id="VerLibrosprestados" layoutX="324.0" layoutY="583.0" mnemonicParsing="false" onAction="#VerLibrosprestados" text="Ver Libros Prestados" />
+      <Button fx:id="VerLibrosprestados" layoutX="325.0" layoutY="590.0" mnemonicParsing="false" onAction="#VerLibrosprestados" text="Mas Informacion de prestamo" />
+      <Button fx:id="IRaHistorial" layoutX="149.0" layoutY="590.0" mnemonicParsing="false" onAction="#IRaHistorial" text="IR a ver Prestamos" />
    </children>
 </AnchorPane>

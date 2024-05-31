@@ -16,6 +16,7 @@ import java.util.Map;
  */
 public class Prestamo {
     private int idPrestamo;
+    private String id_prestamo;
     private int idUsuario;
     private long ISBN;
     private int cantidadPrestada;
@@ -23,8 +24,9 @@ public class Prestamo {
     private Date fecha_devolucion;
     private LocalDateTime fechaMaxDevolucion;
     private boolean estado;
-    
     private String nombreUsuario;
+    
+   
     
     
     
@@ -37,6 +39,24 @@ public class Prestamo {
     public Prestamo() {
         
     }
+
+    public Prestamo( String id_prestamo, int idUsuario, long ISBN, int cantidadPrestada, LocalDateTime fechaPrestamo, Date fecha_devolucion, LocalDateTime fechaMaxDevolucion, boolean estado,  Map<Long, Integer> librosPrestados) {
+        //this.idPrestamo = idPrestamo;
+        this.id_prestamo=id_prestamo;
+        this.idUsuario = idUsuario;
+        this.ISBN = ISBN;
+        this.cantidadPrestada = cantidadPrestada;
+        this.fechaPrestamo = fechaPrestamo;
+        this.fecha_devolucion = fecha_devolucion;
+        this.fechaMaxDevolucion = fechaMaxDevolucion;
+        this.estado = estado;
+        
+        this.librosPrestados = librosPrestados;
+        
+    }
+   
+    
+    
     public Prestamo(Long ISBN, Integer cantidadPrestada) {
         this.ISBN = ISBN;
         this.cantidadPrestada = cantidadPrestada;
@@ -58,13 +78,7 @@ public class Prestamo {
         this.idUsuario = idUsuario;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
-    }
-
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-    }
+   
 
     public LocalDateTime getFechaPrestamo() {
         return fechaPrestamo;
@@ -121,6 +135,29 @@ public class Prestamo {
     public void setFecha_devolucion(Date fecha_devolucion) {
         this.fecha_devolucion = fecha_devolucion;
     }
+
+    public String getId_prestamo() {
+        return id_prestamo;
+    }
+
+    public void setId_prestamo(String id_prestamo) {
+        this.id_prestamo = id_prestamo;
+    }
+
+    
+
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+   
+
+    
     
     
 

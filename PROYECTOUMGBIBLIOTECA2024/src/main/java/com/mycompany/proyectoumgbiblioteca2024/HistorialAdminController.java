@@ -36,7 +36,7 @@ import javafx.util.Callback;
  *
  * @author Edgar Chajón
  */
-public class HitorialPrestamoController implements Initializable {
+public class HistorialAdminController implements Initializable {
 
     @FXML
     private TextField IdUsuario;
@@ -57,24 +57,24 @@ public class HitorialPrestamoController implements Initializable {
     @FXML
     private TableColumn<Prestamo,Boolean> EstadodePrestamo;
     @FXML
-    private Button RegresarMenuUsuario;
+    private Button RegresarMenuAdmin;
+    
     @FXML
     private Button BuscarHistorialdePrestamo;
     
-   private Connection conexionBD;
+    private Connection conexionBD;
    
     private ObservableList<Prestamo> listaPrestamos;
-
+ 
     /**
      * Initializes the controller class.
      */
-    
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
         CConexion cConexion = new CConexion();
         conexionBD = cConexion.establecer();
-        cargarDatosUsuario();
+        
         
          
         
@@ -87,7 +87,6 @@ public class HitorialPrestamoController implements Initializable {
         EstadodePrestamo.setCellValueFactory(new PropertyValueFactory<>("estado"));
         
         
-        //Prueba
         EstadodePrestamo.setCellFactory(new Callback<TableColumn<Prestamo, Boolean>, TableCell<Prestamo, Boolean>>() {
         public TableCell<Prestamo, Boolean> call(TableColumn<Prestamo, Boolean> column) {
                 return new TableCell<Prestamo, Boolean>() {
@@ -108,54 +107,14 @@ public class HitorialPrestamoController implements Initializable {
                     
                 
             
-  
-        
-        
-        
-        
-        
-        
-        
-        
-        //termina prueba
-        
-        
-        
-        
-        
-        
-        
-        listaPrestamos = FXCollections.observableArrayList();
-        tablaPrestamos.setItems(listaPrestamos);
-        
-    }  
-    
-   
-        
-     
-
-    @FXML
-    private void RegresarMenuUsuario(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuUsuario_1.fxml"));
-            Parent root = loader.load();
-            Stage stage = (Stage) RegresarMenuUsuario.getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            mostrarAlerta("Error", "No se pudo cargar la vista del menú principal.");
-            e.printStackTrace();
-        } 
-        
-        
-        
-    }
+  listaPrestamos = FXCollections.observableArrayList();
+   tablaPrestamos.setItems(listaPrestamos);
+        // TODO
+    }    
 
     @FXML
     private void BuscarHistorialdePrestamo(ActionEvent event) {
-        
-       try {
+        try {
             int idUsuario = Integer.parseInt(IdUsuario.getText());
             String sql = "SELECT * FROM prestamo WHERE Usuario_id = ?";
             PreparedStatement statement = conexionBD.prepareStatement(sql);
@@ -197,16 +156,28 @@ public class HitorialPrestamoController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void RegresarMenuAdmin(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuAdmin.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) RegresarMenuAdmin.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            mostrarAlerta("Error", "No se pudo cargar la vista del menú principal.");
+            e.printStackTrace();
+        } 
+    }
     
-    private void mostrarAlerta(String titulo, String mensaje) {
+     private void mostrarAlerta(String titulo, String mensaje) {
      Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo);
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
-        private void cargarDatosUsuario() {
-        SesionUsuario sesion = SesionUsuario.getInstancia();
-        }
     
 }

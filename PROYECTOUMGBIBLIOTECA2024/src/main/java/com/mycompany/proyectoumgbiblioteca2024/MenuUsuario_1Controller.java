@@ -13,6 +13,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -118,6 +120,28 @@ public class MenuUsuario_1Controller implements Initializable {
 
     @FXML
     private void DevolucionLibros(ActionEvent event) {
+         /*try{
+          FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/AceptarDevolucion .fxml"));
+          Parent root=loader.load();
+          
+          Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+      Stage currentStage = (Stage) DevolucionLibros.getScene().getWindow();
+      currentStage.close();
+      }catch (IOException ex) {
+        ex.printStackTrace();
+        System.out.println("Error al cargar la ventana RegistrarLibro");
+      
+         }*/
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Devolución de Libros");
+        alert.setHeaderText(null);
+        alert.setContentText("Contacte al Personal de biblioteca para validar que los Libros ingresen en buen estado. Cualquier alteración tendrá una multa.");
+        alert.showAndWait();
+
+        
+        
     }
     
     

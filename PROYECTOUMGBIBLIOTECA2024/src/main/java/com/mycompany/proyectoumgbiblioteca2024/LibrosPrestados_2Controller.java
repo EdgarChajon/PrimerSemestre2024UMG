@@ -50,8 +50,8 @@ public class LibrosPrestados_2Controller implements Initializable {
     private TextField IdPrestamo;
     @FXML
     private Button RegresarMenuUsuario;
-    private TableView<Prestamo> LibrosPrestados_1;
-    private TableColumn<Prestamo, Long> COLISBN;
+    //private TableView<Prestamo> LibrosPrestados_1;
+    //private TableColumn<Prestamo, Long> COLISBN;
     private TableColumn<Prestamo, Integer> UnidadesPrestadas;
 
     private ObservableList<LibroPrestado> librosPrestados;
@@ -74,22 +74,23 @@ public class LibrosPrestados_2Controller implements Initializable {
         
         // Inicialización si es necesario
     }
-
-    public void setDatosPrestamo(int idPrestamo, int idUsuario, String nombreUsuario, LocalDateTime fechaPrestamo, LocalDateTime fechaMaxDevolucion, Map<Long, Integer> librosPrestados) {
-        IdPrestamo.setText(String.valueOf(idPrestamo));
-        IdUsuario.setText(String.valueOf(idUsuario));
-        nombre.setText(nombreUsuario);
-        FechaPrestamo.setText(fechaPrestamo.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-        fechaMaximaDevolucion.setText(fechaMaxDevolucion.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-        
-        
+//public void setDatosPrestamo(String idPrestamo, int idUsuario, String nombreUsuario, LocalDateTime fechaPrestamo, LocalDateTime fechaMaxDevolucion, Map<Long, Integer> librosPrestados) {
+    
+   public void setDatosPrestamo(int idPrestamo, int idUsuario, String nombreUsuario, LocalDateTime fechaPrestamo, LocalDateTime fechaMaxDevolucion, Map<Long, Integer> librosPrestados) {
+    //IdPrestamo.setText(String.valueOf(idPrestamo)); // Usar el nuevo identificador id_prestamo
+    IdUsuario.setText(String.valueOf(idUsuario));
+    nombre.setText(nombreUsuario);
+    FechaPrestamo.setText(fechaPrestamo.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+    fechaMaximaDevolucion.setText(fechaMaxDevolucion.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+}
+     
         
        
     
         
         
        
-    }
+    
     
     public void CargarDatosTabla(){
         

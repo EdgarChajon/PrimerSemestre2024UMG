@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.mycompany.proyectoumgbiblioteca2024.UsuariosCreadosController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../raw/imagen6.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="171.0" layoutY="27.0" prefHeight="47.0" prefWidth="680.0" text="Usuarios Registrados en el sistema" textFill="#f5f5f5">
+         <font>
+            <Font name="Arial Bold" size="40.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tvUsuario" layoutX="59.0" layoutY="97.0" prefHeight="438.0" prefWidth="906.0">
+         <columns>
+            <TableColumn fx:id="COLNombre" prefWidth="210.0" text="Nombre" />
+            <TableColumn fx:id="COLID" minWidth="0.0" prefWidth="58.0" text="ID" />
+            <TableColumn fx:id="ColEstado" prefWidth="129.0" text="Estado" />
+            <TableColumn fx:id="COLRol" prefWidth="116.0" text="ROL" />
+            <TableColumn fx:id="COLCorreo" prefWidth="160.0" text="COLCorreo" />
+            <TableColumn fx:id="direccion" prefWidth="232.0" text="Direccion " />
+         </columns>
+      </TableView>
+      <Button fx:id="VerTodosLosUsuarios" layoutX="171.0" layoutY="563.0" mnemonicParsing="false" onAction="#VerTodosLosUsuarios" prefHeight="25.0" prefWidth="199.0" text="Ver Usuarios Registrados" />
+      <Button fx:id="RegresaMenuAdmin" layoutX="637.0" layoutY="563.0" mnemonicParsing="false" onAction="#RegresaMenuAdmin" text="Regresaar a Menu Admin " />
+   </children>
+</AnchorPane>

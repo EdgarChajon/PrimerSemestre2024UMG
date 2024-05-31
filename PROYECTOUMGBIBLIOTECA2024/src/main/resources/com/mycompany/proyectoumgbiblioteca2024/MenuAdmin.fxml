@@ -41,8 +41,10 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Button layoutX="48.0" layoutY="361.0" mnemonicParsing="false" text="Usuarios Creados " />
-      <Button layoutX="54.0" layoutY="408.0" mnemonicParsing="false" text="Libros Creados" />
-      <Button fx:id="regresarMenuPrincipal" layoutX="706.0" layoutY="515.0" mnemonicParsing="false" onAction="#regresarMenuPrincipal" text="Salir" />
+      <Button fx:id="UsuariosCreados" layoutX="48.0" layoutY="361.0" mnemonicParsing="false" onAction="#UsuariosCreados" text="Usuarios Creados " />
+      <Button fx:id="LibrosCreados" layoutX="54.0" layoutY="408.0" mnemonicParsing="false" onAction="#LibrosCreados" text="Libros Creados" />
+      <Button fx:id="SalirdeSistema" layoutX="706.0" layoutY="515.0" mnemonicParsing="false" onAction="#SalirdeSistema" text="Salir" />
+      <Button fx:id="AceptarDevolucionLibro" layoutX="455.0" layoutY="284.0" mnemonicParsing="false" onAction="#AceptarDevolucionLibro" text="Aceptar Devolucion de libro" />
+      <Button fx:id="LibrosPrestados" layoutX="48.0" layoutY="467.0" mnemonicParsing="false" onAction="#LibrosPrestados" text="Ver Libros Prestados" />
    </children>
 </AnchorPane>

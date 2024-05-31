@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.mycompany.proyectoumgbiblioteca2024.LibrosRegistradosController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1000.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../raw/imagen2.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="219.0" layoutY="29.0" prefHeight="32.0" prefWidth="559.0" text="Ver Libros Registrados en sistema " textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="28.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tvbooks" layoutX="160.0" layoutY="89.0" prefHeight="388.0" prefWidth="647.0">
+         <columns>
+            <TableColumn fx:id="COLISBN" prefWidth="75.0" text="ISBN" />
+            <TableColumn fx:id="COLTItulo" prefWidth="75.0" text="Titulo" />
+            <TableColumn fx:id="COLAutor" prefWidth="75.0" text="Autor" />
+            <TableColumn fx:id="ColAno" prefWidth="75.0" text="Año" />
+            <TableColumn fx:id="COLEditorial" prefWidth="75.0" text="Editorial" />
+            <TableColumn fx:id="COLGenero" prefWidth="75.0" text="Genero" />
+            <TableColumn fx:id="COLStock" prefWidth="75.0" text="Stock" />
+            <TableColumn fx:id="registroLibro" prefWidth="121.0" text="Registro" />
+         </columns>
+      </TableView>
+      <Button fx:id="VerLibrosRegistrados" layoutX="177.0" layoutY="522.0" mnemonicParsing="false" onAction="#VerLibrosRegistrados" text="Ver Libros Registrados" />
+      <Button fx:id="RegresaraMenuAdmin" layoutX="601.0" layoutY="529.0" mnemonicParsing="false" onAction="#RegresaraMenuAdmin" text="Regresar a Menu" />
+   </children>
+</AnchorPane>

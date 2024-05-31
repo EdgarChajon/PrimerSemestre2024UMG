@@ -2,10 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
+
 package com.mycompany.proyectoumgbiblioteca2024;
 
 import java.io.IOException;
+import java.math.BigInteger;
 import java.net.URL;
+import java.security.SecureRandom;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -89,10 +92,14 @@ public class PrestamoLibro_1Controller implements Initializable {
     private Button CancelarPrestamo;
     @FXML
     private Button salirDeMenu;
+     @FXML
+    private Button IRaHistorial;
     
     private SesionUsuario sesion;
     
     private Map<Long, Integer> carritoLibros = new HashMap<>();
+    
+    //private Map<Long, Integer> carritoLibros = new HashMap<>();
     
     private Connection conexionBD;
     
@@ -105,9 +112,27 @@ public class PrestamoLibro_1Controller implements Initializable {
     private TextField nombre;
     @FXML
     private Button VerLibrosprestados;
+    
+    private int idPrestamoActual;
 
     public void setSesion(SesionUsuario sesion) {
         this.sesion = sesion;
+    }
+    
+    @FXML
+    private void IRaHistorial(ActionEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("HitorialPrestamo.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) IRaHistorial.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            mostrarAlerta("Error", "No se pudo cargar la vista del menú principal.");
+            e.printStackTrace();
+        } 
+        
     }
 
     private void cargarDatosUsuario() {
@@ -245,48 +270,55 @@ public class PrestamoLibro_1Controller implements Initializable {
     @FXML
     private void anadiraCarrito(ActionEvent event) {
         String isbnTexto = ISBN.getText();
-        if (isbnTexto.isEmpty()) {
-            mostrarAlerta("Error", "Por favor, ingrese un ISBN.");
-            return;
-        }
-        String cantidadTexto = cantidadparaPrestamo.getText();
-        if (cantidadTexto == null || cantidadTexto.isEmpty()) {
-            mostrarAlerta("Error", "Por favor, ingrese una cantidad para préstamo.");
-            return;
-        }
-
-        int cantidadDeseada;
-        try {
-            cantidadDeseada = Integer.parseInt(cantidadTexto);
-        } catch (NumberFormatException e) {
-            mostrarAlerta("Error", "La cantidad debe ser un número.");
-            return;
-        }
-        long isbn;
-        try {
-            isbn = Long.parseLong(isbnTexto);
-        } catch (NumberFormatException e) {
-            mostrarAlerta("Error", "El ISBN debe ser un número.");
-            return;
-        }
-        Libro libroSeleccionado = buscarLibroPorISBN(isbn);
-        if (libroSeleccionado == null) {
-            mostrarAlerta("Error", "No se encontró ningún libro con ese ISBN.");
-            return;
-        }
-
-        if (libroSeleccionado.getCantidadStock() < cantidadDeseada) {
-            mostrarAlerta("Error", "No hay suficiente stock disponible para este libro.");
-            return;
-        }
-
-        if (carritoLibros.containsKey(isbn)) {
-            cantidadDeseada += carritoLibros.get(isbn);
-        }
-        carritoLibros.put(isbn, cantidadDeseada);
-        mostrarAlerta("Éxito", "Libro agregado al carrito con éxito.");
-        actualizarStock(libroSeleccionado, cantidadDeseada);
+    if (isbnTexto.isEmpty()) {
+        mostrarAlerta("Error", "Por favor, ingrese un ISBN.");
+        return;
     }
+    String cantidadTexto = cantidadparaPrestamo.getText();
+    if (cantidadTexto == null || cantidadTexto.isEmpty()) {
+        mostrarAlerta("Error", "Por favor, ingrese una cantidad para préstamo.");
+        return;
+    }
+
+    int cantidadDeseada;
+    try {
+        cantidadDeseada = Integer.parseInt(cantidadTexto);
+    } catch (NumberFormatException e) {
+        mostrarAlerta("Error", "La cantidad debe ser un número.");
+        return;
+    }
+    long isbn;
+    try {
+        isbn = Long.parseLong(isbnTexto);
+    } catch (NumberFormatException e) {
+        mostrarAlerta("Error", "El ISBN debe ser un número.");
+        return;
+    }
+    Libro libroSeleccionado = buscarLibroPorISBN(isbn);
+    if (libroSeleccionado == null) {
+        mostrarAlerta("Error", "No se encontró ningún libro con ese ISBN.");
+        return;
+    }
+
+    if (libroSeleccionado.getCantidadStock() < cantidadDeseada) {
+        mostrarAlerta("Error", "No hay suficiente stock disponible para este libro.");
+        return;
+    }
+
+    if (carritoLibros.containsKey(isbn)) {
+        cantidadDeseada += carritoLibros.get(isbn);
+    }
+    carritoLibros.put(isbn, cantidadDeseada);
+    mostrarAlerta("Éxito", "Libro agregado al carrito con éxito.");
+    
+    if (idPrestamoActual == 0) {
+        idPrestamoActual = generarIdPrestamo();
+    }
+    limpiarCampos();
+    
+    }
+        
+        
 
     private void actualizarStock(Libro libro, int cantidad) {
         try {
@@ -314,11 +346,13 @@ public class PrestamoLibro_1Controller implements Initializable {
     }
 
     try {
-        int idPrestamo = guardarPrestamo();
-        actualizarEstadoLibrosPrestados();
-        carritoLibros.clear();
+        String codigoPrestamo = guardarPrestamo();//prueba 31/05
+        
+        guardarPrestamo(); // Guardar el préstamo en la base de datos
+        actualizarEstadoLibrosPrestados(); // Actualizar el estado de los libros prestados
+        carritoLibros.clear(); // Limpiar el carrito
+        idPrestamoActual = 0; // Reiniciar el id_prestamo actual
         mostrarAlerta("Éxito", "El préstamo se realizó con éxito.");
-        mostrarPrestamoFinal(idPrestamo); // Mostrar el préstamo final usando el ID real
     } catch (SQLException e) {
         System.out.println("Error al aceptar el préstamo: " + e.getMessage());
         mostrarAlerta("Error", "No se pudo realizar el préstamo.");
@@ -341,10 +375,17 @@ public class PrestamoLibro_1Controller implements Initializable {
     private int generarIdPrestamo() {
         return (int) (Math.random() * 10000);
     }
+    
+    private String generarCodigoAleatorio() {
+        SecureRandom secureRandom = new SecureRandom();
+        return new BigInteger(24, secureRandom).toString(10);
+    }
+    
+    
 
-    private int guardarPrestamo() throws SQLException {
-       LocalDateTime fechaPrestamo = LocalDateTime.now();
-    int idPrestamo = -1;
+    private String guardarPrestamo() throws SQLException {
+    LocalDateTime fechaPrestamo = LocalDateTime.now();
+        String codigoPrestamo = generarCodigoAleatorio();
 
     for (Map.Entry<Long, Integer> entry : carritoLibros.entrySet()) {
         long isbn = entry.getKey();
@@ -353,19 +394,16 @@ public class PrestamoLibro_1Controller implements Initializable {
         try {
             LocalDateTime fechaVencimiento = fechaPrestamo.plusDays(14);
 
-            String sql = "INSERT INTO Prestamo (Usuario_id, isbn, cantidad_prestada, fecha_prestamo, fecha_vencimiento) VALUES (?, ?, ?, ?, ?) RETURNING id";
+            String sql = "INSERT INTO Prestamo (id_prestamo, Usuario_id, isbn, cantidad_prestada, fecha_prestamo, fecha_vencimiento) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = conexionBD.prepareStatement(sql);
-            statement.setInt(1, sesion.getId());
-            statement.setLong(2, isbn);
-            statement.setInt(3, cantidadPrestada);
-            statement.setTimestamp(4, Timestamp.valueOf(fechaPrestamo));
-            statement.setTimestamp(5, Timestamp.valueOf(fechaVencimiento));
+            statement.setString(1, codigoPrestamo); // Usar el código generado
+            statement.setInt(2, sesion.getId());
+            statement.setLong(3, isbn);
+            statement.setInt(4, cantidadPrestada);
+            statement.setTimestamp(5, Timestamp.valueOf(fechaPrestamo));
+            statement.setTimestamp(6, Timestamp.valueOf(fechaVencimiento));
 
-            ResultSet rs = statement.executeQuery();
-            if (rs.next()) {
-                idPrestamo = rs.getInt(1);
-            }
-
+            statement.executeUpdate();
             statement.close();
         } catch (SQLException e) {
             System.out.println("Error al guardar el préstamo: " + e.getMessage());
@@ -373,19 +411,19 @@ public class PrestamoLibro_1Controller implements Initializable {
         }
     }
 
-    return idPrestamo;
+    return codigoPrestamo;
 }
 
     private void actualizarEstadoLibrosPrestados() throws SQLException {
-        for (Map.Entry<Long, Integer> entry : carritoLibros.entrySet()) {
-            long isbn = entry.getKey();
-            String sql = "UPDATE registrolibro SET estadolibro = ? WHERE isbn = ?";
-            PreparedStatement statement = conexionBD.prepareStatement(sql);
-            statement.setBoolean(1, true);
-            statement.setLong(2, isbn);
-            statement.executeUpdate();
-            statement.close();
-        }
+       for (Map.Entry<Long, Integer> entry : carritoLibros.entrySet()) {
+        long isbn = entry.getKey();
+        String sql = "UPDATE registrolibro SET estadolibro = ? WHERE isbn = ?";
+        PreparedStatement statement = conexionBD.prepareStatement(sql);
+        statement.setBoolean(1, true);
+        statement.setLong(2, isbn);
+        statement.executeUpdate();
+        statement.close();
+    }
     }
 
     @FXML
@@ -395,6 +433,17 @@ public class PrestamoLibro_1Controller implements Initializable {
 
     @FXML
     private void salirDeMenu(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuUsuario.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) salirDeMenu.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            mostrarAlerta("Error", "No se pudo cargar la vista del menú principal.");
+            e.printStackTrace();
+        } 
     }
 
     private void mostrarAlerta(String titulo, String encabezado, String contenido, Alert.AlertType tipo) {
@@ -485,6 +534,17 @@ public class PrestamoLibro_1Controller implements Initializable {
     Stage currentStage = (Stage) VerLibrosprestados.getScene().getWindow();
     currentStage.close();
 }
+    
+    private void limpiarCampos() {
+        ISBN.clear();
+        tituloLibro.clear();
+        autorLibro.clear();
+        anoPublicacion.clear();
+        editorial.clear();
+        generoLiterario.clear();
+        cantidadenStock.clear();
+        cantidadparaPrestamo.clear();
+    }
     
 
  }

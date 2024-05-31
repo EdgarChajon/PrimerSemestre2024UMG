@@ -8,8 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.mycompany.proyectoumgbiblioteca2024.HitorialPrestamoController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectoumgbiblioteca2024.HitorialPrestamoController">
    <children>
       <ImageView fitHeight="700.0" fitWidth="1000.0" layoutX="-2.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -35,5 +34,15 @@
       </TableView>
       <Button fx:id="RegresarMenuUsuario" layoutX="462.0" layoutY="599.0" mnemonicParsing="false" onAction="#RegresarMenuUsuario" text="Regresar " />
       <Button fx:id="BuscarHistorialdePrestamo" layoutX="202.0" layoutY="116.0" mnemonicParsing="false" onAction="#BuscarHistorialdePrestamo" text="Buscar Historial" />
+      <Label layoutX="499.0" layoutY="56.0" prefHeight="32.0" prefWidth="227.0" text="Inactivo: Libros devueltos" textFill="#110000">
+         <font>
+            <Font name="Arial Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="495.0" layoutY="14.0" prefHeight="32.0" prefWidth="394.0" text="Activo: Libro o Libros no devueltos" textFill="#070000">
+         <font>
+            <Font name="Arial Bold" size="17.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

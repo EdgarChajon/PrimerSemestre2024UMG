@@ -31,7 +31,7 @@
       <Button fx:id="verHistorialdePrestamos" layoutX="193.0" layoutY="259.0" mnemonicParsing="false" onAction="#verHistorialdePrestamos" prefHeight="25.0" prefWidth="168.0" text="Ver Historial" />
       <Button fx:id="VerHistorialMultas" layoutX="193.0" layoutY="338.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="168.0" text="Ver Multas" />
       <Button fx:id="RestablecerContraseña" layoutX="529.0" layoutY="164.0" mnemonicParsing="false" onAction="#RestablecerContraseña" prefHeight="25.0" prefWidth="174.0" text="Restablecer contraseña" />
-      <Button fx:id="DevolucionLibros" layoutX="188.0" layoutY="434.0" mnemonicParsing="false" onAction="#DevolucionLibros" prefHeight="25.0" prefWidth="168.0" text="Devolucion de libros " />
+      <Button fx:id="DevolucionLibros" layoutX="188.0" layoutY="434.0" mnemonicParsing="false" onAction="#DevolucionLibros" prefHeight="25.0" prefWidth="189.0" text="Instrucciones para Devolucion " />
       <Button fx:id="SalirDeSistema" layoutX="532.0" layoutY="434.0" mnemonicParsing="false" onAction="#SalirDeSistema" prefHeight="25.0" prefWidth="168.0" text="Salir de sistema" />
    </children>
 </AnchorPane>

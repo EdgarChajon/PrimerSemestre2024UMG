@@ -209,6 +209,7 @@ public class EditarUsuarioController implements Initializable {
         } catch (NumberFormatException e) {
             mostrarAlerta("Error", "Asegúrese de que todos los campos contengan datos válidos.");
         }
+        limpiarCampos();
     
     }
     
