@@ -433,21 +433,17 @@ public class PrestamoLibro_1Controller implements Initializable {
 
     @FXML
     private void salirDeMenu(ActionEvent event) {
-        try{
-          FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/MenuUsuario.fxml"));
-          Parent root=loader.load();
-          
-          Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.show();
-      Stage currentStage = (Stage) salirDeMenu.getScene().getWindow();
-      currentStage.close();
-      }catch (IOException ex) {
-        ex.printStackTrace();
-        System.out.println("Error al cargar la ventana RegistrarLibro");
-      
-         }
-    
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mycompany/proyectoumgbiblioteca2024/MenuUsuario.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) salirDeMenu.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            mostrarAlerta("Error", "No se pudo cargar la vista del menú principal.");
+            e.printStackTrace();
+        } 
     }
 
     private void mostrarAlerta(String titulo, String encabezado, String contenido, Alert.AlertType tipo) {

@@ -71,7 +71,7 @@ public class UsuarioCrearCuentaController implements Initializable {
 
     @FXML
     private void aceptarCrearUsuario(ActionEvent event) {
-           Usuario usuario = new Usuario();
+         Usuario usuario = new Usuario();
         usuario.setNombre(nombre.getText());
         usuario.setDireccion(direccion.getText());
         usuario.setTelefono(Long.parseLong(telefono.getText()));
@@ -80,47 +80,46 @@ public class UsuarioCrearCuentaController implements Initializable {
         usuario.setEstado(true);
         usuario.setContra(ContraUsuario.getText());
         usuario.setCorreo(correo.getText());
-        
+
         insertarUsuario(usuario);
     }
     
     public void insertarUsuario(Usuario usuario) {
-        String sqlInsert = "INSERT INTO usuariobiblioteca (nombre, direccion, telefono, cui, estado, rolusuario, contra, correo, fecha_creacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    String sqlSelectId = "SELECT id FROM usuariobiblioteca WHERE nombre = ? AND cui = ? ORDER BY fecha_creacion DESC LIMIT 1";
-    
-    try (PreparedStatement statementInsert = conexionBD.prepareStatement(sqlInsert);
-         PreparedStatement statementSelectId = conexionBD.prepareStatement(sqlSelectId)) {
-        
-        // Realizar la inserción del usuario
-        statementInsert.setString(1, usuario.getNombre());
-        statementInsert.setString(2, usuario.getDireccion());
-        statementInsert.setLong(3, usuario.getTelefono());
-        statementInsert.setLong(4, usuario.getCui());
-        statementInsert.setBoolean(5, usuario.isEstado());
-        statementInsert.setString(6, usuario.getRolUsuario());
-        statementInsert.setString(7, usuario.getContra());
-        statementInsert.setString(8, usuario.getCorreo());
-        statementInsert.setTimestamp(9, usuario.getFechaCreacion());
-        statementInsert.executeUpdate();
-        
-        // Obtener el ID del usuario recién insertado
-        statementSelectId.setString(1, usuario.getNombre());
-        statementSelectId.setLong(2, usuario.getCui());
-        ResultSet resultSet = statementSelectId.executeQuery();
-        
-        if (resultSet.next()) {
-            int idGenerado = resultSet.getInt("id");
-            mostrarAlerta("Éxito", "Usuario registrado correctamente. ID del usuario: " + idGenerado +"Por favor anotar numero para ingresar al sistema");
-        } else {
-            mostrarAlerta("Éxito", "Usuario registrado correctamente, pero no se pudo obtener el ID.");
+    String sqlInsert = "INSERT INTO usuariobiblioteca (nombre, direccion, telefono, cui, estado, rolusuario, contra, correo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sqlSelectId = "SELECT id FROM usuariobiblioteca WHERE nombre = ? AND cui = ? ORDER BY fecha_creacion DESC LIMIT 1";
+
+        try (PreparedStatement statementInsert = conexionBD.prepareStatement(sqlInsert);
+             PreparedStatement statementSelectId = conexionBD.prepareStatement(sqlSelectId)) {
+
+            // Realizar la inserción del usuario
+            statementInsert.setString(1, usuario.getNombre());
+            statementInsert.setString(2, usuario.getDireccion());
+            statementInsert.setLong(3, usuario.getTelefono());
+            statementInsert.setLong(4, usuario.getCui());
+            statementInsert.setBoolean(5, usuario.isEstado());
+            statementInsert.setString(6, usuario.getRolUsuario());
+            statementInsert.setString(7, usuario.getContra());
+            statementInsert.setString(8, usuario.getCorreo());
+            statementInsert.executeUpdate();
+
+            // Obtener el ID del usuario recién insertado
+            statementSelectId.setString(1, usuario.getNombre());
+            statementSelectId.setLong(2, usuario.getCui());
+            ResultSet resultSet = statementSelectId.executeQuery();
+
+            if (resultSet.next()) {
+                int idGenerado = resultSet.getInt("id");
+                mostrarAlerta("Éxito", "Usuario registrado correctamente. ID del usuario: " + idGenerado + ". Por favor anotar el número para ingresar al sistema.");
+            } else {
+                mostrarAlerta("Éxito", "Usuario registrado correctamente, pero no se pudo obtener el ID.");
+            }
+
+            resultSet.close();
+            limpiarCampos();
+        } catch (SQLException e) {
+            System.out.println("Error al insertar usuario: " + e.getMessage());
+            mostrarAlerta("Error", "No se pudo registrar el usuario.");
         }
-        
-        resultSet.close();
-        limpiarCampos();
-    } catch (SQLException e) {
-        System.out.println("Error al insertar usuario: " + e.getMessage());
-        mostrarAlerta("Error", "No se pudo registrar el usuario.");
-    }
         limpiarCampos();
     }
     
